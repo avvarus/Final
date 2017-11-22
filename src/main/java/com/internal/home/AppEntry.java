@@ -1,4 +1,4 @@
-package com.hudsonmendes.microservice1;
+package com.internal.home;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
