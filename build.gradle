@@ -2,7 +2,7 @@
 buildscript {
     ext {
         springBootVersion     = "1.5.2.RELEASE"
-        //gradleDockerVersion   = "1.2"
+
     }
     repositories {
         mavenCentral()
@@ -17,6 +17,7 @@ apply plugin: "java"
 apply plugin: "application"
 apply plugin: "eclipse"
 apply plugin: "org.springframework.boot"
+apply plugin: "war"
 
 compileJava {
     sourceCompatibility = 1.8
@@ -24,16 +25,15 @@ compileJava {
     mainClassName       = "com.hudsonmendes.microservice1.AppEntry"
 }
 
-jar {
-    baseName = "api-films"
-    group    = "com.hudsonmendes"
-    version  = "0.0.1-SNAPSHOT"
-    manifest { attributes "Main-Class": "com.hudsonmendes.microservice1.AppEntry" }
+war {
+    archiveName 'final.war'
 }
-//
-//docker {
-//    baseImage "frolvlad/alpine-oraclejdk8:slim"
-//    maintainer 'Hudson Mendes "hudsonmendes@gmail.com"'
+
+// jar {
+//    baseName = "api-films"
+//    group    = "com.hudsonmendes"
+//    version  = "0.0.1-SNAPSHOT"
+//    manifest { attributes "Main-Class": "com.hudsonmendes.microservice1.AppEntry" }
 //}
 
 repositories {
